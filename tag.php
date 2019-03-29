@@ -74,12 +74,26 @@ class Tag
     }
 
     public function generateXML(){
-        $string = '';
-        $string = '<';
-        foreach($this->getChilds() as $x){
-           $string.= $x->generateXML();
-        }
-        
-        return $string;
-    }
+		$ret = "";
+		$ret .= "<".$this->tag;
+		if(isset($this->attributi)){
+			foreach($this->attributi as $k => $v){
+				$ret .= " ".$k.'="'.$v.'"';
+			}
+		}
+		if(!isset($this->text) && !isset($this->figli)){
+			$ret .= " />";
+		}else{
+			$ret .= ">";
+			if(isset($this->text)){
+				$ret .= $this->text;
+			}elseif(isset($this->figli) && is_array($this->figli)){
+				foreach($this->figli as $f){
+					$ret .= $f->generateXML();
+				}
+			}				
+			$ret .= "</".$this->tag.">";	
+		}
+		return $ret;
+	}
 }
