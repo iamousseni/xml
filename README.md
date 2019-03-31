@@ -13,7 +13,7 @@ class Tag {
     __construct(string name, string innerText = '', array attributes = [], Tag parent = null, Tag childs = null) :void
     setName(string name) :void
     getName() :string
-    setInnerText(innerText) :void
+    setInnerText(string innerText) :void
     getInnerText() :string
     setAttribute(string name, string value) :void
     getAttribute() :array
