@@ -50,16 +50,16 @@ class XML extends Tag{
 }
 ```
 
-## How to use
+# How to use
 
 To use this class in your project you will need to include it.
 ```code
 include('xml.php');
 ```
 
-## Examples to use
+# Examples to use
 
-# Example 1
+## Example 1
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -99,7 +99,7 @@ header('Content-Type: text/xml');
 echo $xml->getXML_string_from_array($users_array);
 ```
 
-# Example 2
+## Example 2
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -113,7 +113,7 @@ echo $xml->getXML_string();
 ```
 -> example of photo <-
 
-# Example 3
+## Example 3
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -126,7 +126,7 @@ $xml->createXML_file_from_XML_OBJ();
 ```
 -> example of photo <-
 
-# Example 4
+## Example 4
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -165,7 +165,7 @@ $xml->createXML_file_from_array($users_array);
 ```
 -> example of photo <-
 
-# Example 5
+## Example 5
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -177,7 +177,7 @@ $xml->createXML_file_from_XMLstring($xml->getXML_string());
 ```
 -> example of photo <-
 
-# Example 6
+## Example 6
 
 ```
 $xml = new XML('1.0', 'utf-8');
