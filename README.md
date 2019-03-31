@@ -96,6 +96,7 @@ $users_array = array(
 header('Content-Type: text/xml');
 echo $xml->getXML_string_from_array($users_array);
 ```
+![](images/e1.PNG)
 
 ## Example 2
 
@@ -108,7 +109,7 @@ $name = $xml->createTag('name', 'Viktor', [], $user1);
 header('Content-Type: text/xml');
 echo $xml->getXML_string();
 ```
--> example of photo <-
+![](images/e2.PNG)
 
 ## Example 3
 
@@ -120,10 +121,10 @@ $id = $xml->createTag('id', '1', [], $user1);
 $name = $xml->createTag('name', 'Viktor', [], $user1);
 $xml->createXML_file_from_XML_OBJ();
 ```
--> example of photo success <-
+![](images/e3.PNG)
 Check out on current project directory the file that was created.
 
--> example of photo unsuccess <-
+![](images/e3_1.PNG)
 Check out if the parameter passed is really a string and try again
 
 ## Example 4
@@ -163,11 +164,11 @@ $users_array = array(
 );
 $xml->createXML_file_from_array($users_array);
 ```
--> example of photo success <-
+![](images/e3.PNG)
 Check out on current project directory the file that was created.
 
--> example of photo unsuccess <-
-Check out if the parameter passed is really an array and try again
+![](images/e3_1.PNG)
+Check out if the parameter passed is really a string and try again
 
 ## Example 5
 
@@ -179,10 +180,10 @@ $id = $xml->createTag('id', '1', [], $user1);
 $name = $xml->createTag('name', 'Viktor', [], $user1);
 $xml->createXML_file_from_XMLstring($xml->getXML_string());
 ```
--> example of photo success <-
+![](images/e3.PNG)
 Check out on current project directory the file that was created.
 
--> example of photo unsuccess <-
+![](images/e3_1.PNG)
 Check out if the parameter passed is really a string and try again
 
 ## Example 6
@@ -195,4 +196,4 @@ $id = $xml->createTag('id', '1', [], $user1);
 $name = $xml->createTag('name', 'Viktor', [], $user1);
 var_dump($xml->getArray_from_XML());
 ```
--> example of photo <-
+![](images/e6.PNG)
