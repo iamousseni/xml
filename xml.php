@@ -251,30 +251,43 @@ class XML extends Tag
     }
   }
 
-  public function createXML_file_from_array(array $arrayData)
+  public function getArray_from_XML_from_XML_OBJ($XML){
+    if ($XML->getRoot() !== null) {
+      $xmlArray[$XML->getRoot()->getName()] = $XML->getRoot()->getInnerText();
+      if ($XML->getRoot()->getChilds() !== null) {
+        $xmlArray[$XML->getRoot()->getName()] = $XML->addTagOnXML($XML->getRoot()->getChilds());
+      }
+      return $xmlArray;
+    } else {
+      return false;
+    }
+  }
+
+  public function createXML_file_from_array(array $arrayData, string $fileName = 'xmlFile')
   {
-    $xmlFile = fopen('xmlFile.xml', 'w');
+    $xmlFile = fopen($fileName.'.xml', 'w');
     $status = fwrite($xmlFile, $this->getXML_string_from_array($arrayData));
     fclose($xmlFile);
     echo $status !== false ? 'File created successfull!' : 'Error! There was an array on writing into file.';
     return $status !== false ? true : false;
   }
 
-  public function createXML_file_from_XMLstring(string $XMLstring)
+  public function createXML_file_from_XMLstring(string $XMLstring, string $fileName = 'xmlFile')
   {
-    $xmlFile = fopen('xmlFile.xml', 'w');
+    $xmlFile = fopen($fileName.'.xml', 'w');
     $status = fwrite($xmlFile, $XMLstring);
     fclose($xmlFile);
     echo $status !== false ? 'File created successfull!' : 'Error! There was an array on writing into file.';
     return $status !== false ? true : false;
   }
 
-  public function createXML_file_from_XML_OBJ()
+  public function createXML_file_from_XML_OBJ($fileName = 'xmlFile')
   {
     $xmlString = $this->getXML_string();
     if ($xmlString !== false)
-      return  $this->createXML_file_from_XMLstring($xmlString);
+      return  $this->createXML_file_from_XMLstring($xmlString, $fileName);
     else
       return false;
   }
 }
+

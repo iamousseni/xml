@@ -40,26 +40,24 @@ class XML extends Tag{
     createTag(string name, string innerText = '', array attributes = [], Tag parent = null, Tag child = null) :Tag
     getXML_string() :string
     getXML_string_from_array(array dataArray) :string
-    getArray_from_XML(XML Tree) :array
+    getArray_from_XML_from_XML_OBJ(XML Tree) :array
     getArray_from_XML() :array
-    getXML_string_from_file(string fileName) :string
-    getXML_file_from_string(string xml) :file
-    createXML_file_from_array(array dataArray) :boolean
-    createXML_file_from_XML_OBJ(XML Obj) :boolean
-    createXML_file_from_XMLstring(string XMLstring) :boolean
+    createXML_file_from_array(array dataArray, string fileName = 'xmlFile') :boolean
+    createXML_file_from_XML_OBJ(string fileName = 'xmlfile') :boolean
+    createXML_file_from_XMLstring(string XMLstring, string fileName = 'xmlfile') :boolean
 }
 ```
 
-## How to use
+# How to use
 
 To use this class in your project you will need to include it.
 ```code
 include('xml.php');
 ```
 
-## Examples to use
+# Examples to use
 
-# Example 1
+## Example 1
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -99,7 +97,7 @@ header('Content-Type: text/xml');
 echo $xml->getXML_string_from_array($users_array);
 ```
 
-# Example 2
+## Example 2
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -109,11 +107,10 @@ $id = $xml->createTag('id', '1', [], $user1);
 $name = $xml->createTag('name', 'Viktor', [], $user1);
 header('Content-Type: text/xml');
 echo $xml->getXML_string();
-
 ```
 -> example of photo <-
 
-# Example 3
+## Example 3
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -122,11 +119,14 @@ $user1 = $xml->createTag('user');
 $id = $xml->createTag('id', '1', [], $user1);
 $name = $xml->createTag('name', 'Viktor', [], $user1);
 $xml->createXML_file_from_XML_OBJ();
-
 ```
--> example of photo <-
+-> example of photo success <-
+Check out on current project directory the file that was created.
 
-# Example 4
+-> example of photo unsuccess <-
+Check out if the parameter passed is really a string and try again
+
+## Example 4
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -163,9 +163,13 @@ $users_array = array(
 );
 $xml->createXML_file_from_array($users_array);
 ```
--> example of photo <-
+-> example of photo success <-
+Check out on current project directory the file that was created.
 
-# Example 5
+-> example of photo unsuccess <-
+Check out if the parameter passed is really an array and try again
+
+## Example 5
 
 ```
 $xml = new XML('1.0', 'utf-8');
@@ -175,9 +179,13 @@ $id = $xml->createTag('id', '1', [], $user1);
 $name = $xml->createTag('name', 'Viktor', [], $user1);
 $xml->createXML_file_from_XMLstring($xml->getXML_string());
 ```
--> example of photo <-
+-> example of photo success <-
+Check out on current project directory the file that was created.
 
-# Example 6
+-> example of photo unsuccess <-
+Check out if the parameter passed is really a string and try again
+
+## Example 6
 
 ```
 $xml = new XML('1.0', 'utf-8');
