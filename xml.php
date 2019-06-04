@@ -4,7 +4,7 @@
     @author Ousseni Bara
     @github iamousseni
     version: 1.0.0
-    last modified: 31/03/2018
+    last modified: 31/03/2019
 */
 
 class Tag
